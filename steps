@@ -1,0 +1,539 @@
+# WhatsApp AI Girlfriend Bot — Complete A to Z Guide (2026)
+
+## What You Will Build
+
+You will create:
+
+* A WhatsApp chatbot
+* Powered by AI
+* Replies like a realistic Sri Lankan girlfriend
+* Uses Singlish
+* Runs 24/7 for free
+* Uses Gemini AI or Groq AI
+* Hosted online
+
+By the end you will have:
+
+```text
+WhatsApp → AI → Realistic Reply
+```
+
+---
+
+# PART 1 — INSTALL EVERYTHING
+
+## 1. Install Node.js
+
+Download:
+
+[https://nodejs.org](https://nodejs.org)
+
+Install LTS version.
+
+After install, test:
+
+```bash
+node -v
+npm -v
+```
+
+---
+
+## 2. Install VS Code
+
+Download:
+
+[https://code.visualstudio.com](https://code.visualstudio.com)
+
+---
+
+## 3. Install Git
+
+Download:
+
+[https://git-scm.com/downloads](https://git-scm.com/downloads)
+
+---
+
+# PART 2 — CREATE PROJECT
+
+## 1. Create Folder
+
+Example:
+
+```text
+whatsapp-ai-gf
+```
+
+Open folder in VS Code.
+
+---
+
+## 2. Open Terminal
+
+Inside VS Code:
+
+```text
+Terminal → New Terminal
+```
+
+---
+
+## 3. Initialize Project
+
+Run:
+
+```bash
+npm init -y
+```
+
+---
+
+# PART 3 — INSTALL PACKAGES
+
+## Install Required Packages
+
+Run:
+
+```bash
+npm install express axios @google/genai
+```
+
+---
+
+# PART 4 — CREATE package.json FIX
+
+Open `package.json`
+
+Add:
+
+```json
+"type": "module"
+```
+
+Example:
+
+```json
+{
+  "name": "whatsapp-ai-gf",
+  "version": "1.0.0",
+  "type": "module"
+}
+```
+
+---
+
+# PART 5 — CREATE META WHATSAPP APP
+
+## 1. Open Meta Developers
+
+[https://developers.facebook.com/apps](https://developers.facebook.com/apps)
+
+---
+
+## 2. Create App
+
+Choose:
+
+```text
+Business
+```
+
+---
+
+## 3. Add WhatsApp Product
+
+Click:
+
+```text
+Add Product → WhatsApp
+```
+
+---
+
+# PART 6 — GET WHATSAPP DETAILS
+
+Go:
+
+```text
+WhatsApp → API Setup
+```
+
+Copy:
+
+* Temporary Access Token
+* Phone Number ID
+* WhatsApp Test Number
+
+Save them.
+
+---
+
+# PART 7 — CONNECT YOUR PHONE
+
+Inside API Setup you will see:
+
+```text
+join happy-tree
+```
+
+Example only.
+
+Send that exact message to the Meta test number using WhatsApp.
+
+After success:
+
+```text
+You joined the sandbox
+```
+
+Now your phone can chat with the bot.
+
+---
+
+# PART 8 — CREATE GEMINI API KEY
+
+Open:
+
+[https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)
+
+Create API key.
+
+Copy it.
+
+---
+
+# PART 9 — CREATE THE BOT LOGIC
+
+Create your main bot file and connect:
+
+* WhatsApp Cloud API
+* AI API (Gemini/Groq)
+* webhook routes
+* message handling
+* chatbot memory
+* personality prompt
+
+Your bot should:
+
+* receive WhatsApp messages
+* send messages to AI
+* get AI reply
+* send reply back to WhatsApp
+* remember recent conversations
+
+You can later customize:
+
+* girlfriend personality
+* Singlish style
+* flirting level
+* emotional behavior
+* emojis
+* typing style
+* memory
+
+---
+
+# PART 10 — START SERVER
+
+Run:
+
+```bash
+node server.js
+```
+
+You should see:
+
+```text
+Server running on port 3000 ❤️
+```
+
+---
+
+# PART 11 — INSTALL NGROK
+
+Download:
+
+[https://ngrok.com/download](https://ngrok.com/download)
+
+---
+
+# PART 12 — START NGROK
+
+Run:
+
+```bash
+ngrok http 3000
+```
+
+Copy HTTPS URL.
+
+Example:
+
+```text
+https://abcd.ngrok-free.app
+```
+
+---
+
+# PART 13 — CONNECT WEBHOOK
+
+Go:
+
+```text
+Meta → Webhooks
+```
+
+Callback URL:
+
+```text
+https://abcd.ngrok-free.app/webhook
+```
+
+Verify Token:
+
+```text
+hello123
+```
+
+Click Verify.
+
+---
+
+# PART 14 — SUBSCRIBE MESSAGES
+
+Enable:
+
+```text
+messages
+```
+
+inside webhook subscriptions.
+
+---
+
+# PART 15 — TEST BOT
+
+Send WhatsApp message:
+
+```text
+hi
+```
+
+Bot should reply.
+
+---
+
+# PART 16 — FREE 24/7 HOSTING
+
+## Use Render
+
+Open:
+
+[https://render.com](https://render.com)
+
+---
+
+## Upload to GitHub
+
+Run:
+
+```bash
+git init
+git add .
+git commit -m "first upload"
+```
+
+Create GitHub repo.
+
+Then:
+
+```bash
+git remote add origin YOUR_REPO_URL
+git branch -M main
+git push -u origin main
+```
+
+---
+
+# PART 17 — DEPLOY TO RENDER
+
+Create:
+
+```text
+New Web Service
+```
+
+Use:
+
+```text
+Build Command:
+npm install
+```
+
+```text
+Start Command:
+node server.js
+```
+
+---
+
+# PART 18 — ENV VARIABLES
+
+Inside Render add:
+
+```text
+GEMINI_API_KEY
+WHATSAPP_TOKEN
+PHONE_NUMBER_ID
+```
+
+---
+
+# PART 19 — UPDATE CODE FOR ENV
+
+Replace:
+
+```javascript
+const GEMINI_API_KEY =
+"YOUR_KEY";
+```
+
+with:
+
+```javascript
+const GEMINI_API_KEY =
+process.env.GEMINI_API_KEY;
+```
+
+Do same for all secrets.
+
+---
+
+# PART 20 — UPDATE META WEBHOOK
+
+Use Render URL:
+
+```text
+https://yourbot.onrender.com/webhook
+```
+
+Now no ngrok needed.
+
+---
+
+# BONUS — MAKE BOT MORE REALISTIC
+
+Add realism:
+
+* typing delays
+* mood changes
+* jealousy
+* dry replies sometimes
+* voice notes later
+* image replies
+* stickers
+* memory database
+
+---
+
+# BONUS — FREE AI OPTIONS
+
+## Best Free APIs
+
+### Google Gemini
+
+[https://aistudio.google.com](https://aistudio.google.com)
+
+### Groq
+
+[https://console.groq.com](https://console.groq.com)
+
+### OpenRouter
+
+[https://openrouter.ai](https://openrouter.ai)
+
+### Ollama (Unlimited Local AI)
+
+[https://ollama.com](https://ollama.com)
+
+---
+
+# COMMON ERRORS
+
+## Authentication Error 190
+
+Cause:
+
+* expired Meta token
+
+Fix:
+
+* generate new token from Meta dashboard
+
+---
+
+## Webhook Verify Failed
+
+Cause:
+
+* wrong webhook URL
+* forgot /webhook
+* ngrok stopped
+* wrong verify token
+
+---
+
+## Package Errors
+
+Cause:
+
+* packages not installed
+* wrong Node.js version
+
+Fix:
+
+* reinstall packages
+* restart terminal
+
+---
+
+## AI Model Errors
+
+Cause:
+
+* old SDK
+* invalid model name
+* expired API key
+
+Fix:
+
+* update AI package
+* use latest supported model
+* create new API key
+
+---
+
+# SECURITY IMPORTANT
+
+NEVER share publicly:
+
+* Gemini API key
+* WhatsApp token
+* Render secrets
+
+Always regenerate leaked keys.
+
+---
+
+# FINAL RESULT
+
+You now have:
+
+✅ WhatsApp AI chatbot
+✅ Realistic Singlish girlfriend AI
+✅ Memory
+✅ Gemini AI
+✅ Free hosting
+✅ 24/7 bot
+✅ Real WhatsApp integration
